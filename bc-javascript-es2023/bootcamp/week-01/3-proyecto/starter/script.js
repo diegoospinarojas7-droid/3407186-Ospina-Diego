@@ -46,34 +46,29 @@
 //   stats: { visitors: 15000, rating: 4.8, duration: 45 }
 // };
 
-const entityData = {
+//const GreenHarvest = {
   // TODO: Reemplaza 'entity' con el nombre de tu entidad en inglés
   // TODO: Agrega las propiedades específicas de tu dominio
-
   // Propiedades básicas (adapta a tu dominio)
   // name: '',
   // description: '',
   // identifier: '', // código, id, número, etc.
-
   // Propiedad de contacto o ubicación (si aplica)
   // contact: {
   //   email: '',
   //   phone: '',
   //   location: ''
   // },
-
   // Array de elementos relacionados (adapta a tu dominio)
   // Ejemplos: skills, ingredients, services, features, amenities
   // items: [
   //   { name: '', level: 0, category: '' },
   //   { name: '', level: 0, category: '' }
   // ],
-
   // Array de enlaces o referencias (si aplica)
   // links: [
   //   { platform: '', url: '', icon: '' }
   // ],
-
   // Estadísticas o contadores (adapta a tu dominio)
   // stats: {
   //   total: 0,
@@ -81,6 +76,45 @@ const entityData = {
   //   rating: 0,
   //   custom: 0  // renombra según tu dominio
   // }
+
+const GreenHarvest = {
+//Propiedades basicas
+name: "GreenHarvest",
+description: "Empresa dedicada a la producción sostenible de alimentos orgánicos, utilizando técnicas innovadoras para cultivar productos frescos y saludables.";
+identifier: "SITCORE_2026",
+
+// Propiedad de contacto o ubicacion (si aplica)
+contact: {
+  email: ("VentaProductos27@GreenHarvest.com"),
+  phone:("3209855784"),
+  location: "Manizales, Colombia",
+}
+
+// Array de elementos relacionados (adapta a tu dominio)
+// Ejemplos: skills, ingredients, services, features, amenities
+items: [
+  { name: "Cultivo hidropónico", level: 90, category: "Técnica de cultivo" },
+  { name: "Productos orgánicos", level: 95, category: "Calidad de productos" },
+  { name: "Sostenibilidad", level: 92, category: "Compromiso ambiental" },
+  { name: "Innovación tecnológica", level: 88, category: "Uso de tecnología" }
+],
+
+  // Array de enlaces o referencias (si aplica)
+  //links: [
+  // {platform: "Sitio web", url: "https://www.greenharvest.com", icon: ""}
+  // ]
+  links: [
+  { name: "BankRouter", url: "https://www.greenharvest.com" },
+  { name: "banktripol", url: "https://www.linkedin.com/company/greenharvest" },
+  { name: "bank3h", url: "https://www.instagram.com/greenharvest" },
+],
+
+  // Estadísticas o contadores (adapta a tu dominio)
+  stats: {
+  totaluser: 15000,
+  activeruser: 10000,
+  total: 8000, // Total de productos cultivados
+}
 };
 
 // ============================================
@@ -118,7 +152,6 @@ const entityData = {
 const renderBasicInfo = () => {
   // TODO: Usa destructuring para extraer las propiedades
   // const { name, description, contact: { email, phone } } = entityData;
-
   // TODO: Actualiza los elementos del DOM usando template literals
   // entityName.textContent = name;
   // entityDescription.innerHTML = `<p>${description}</p>`;
@@ -148,10 +181,8 @@ const renderBasicInfo = () => {
 const renderItems = (showAll = false) => {
   // TODO: Extrae el array de items de entityData
   // const { items } = entityData;
-
   // TODO: Filtra los items si showAll es false
   // const itemsToShow = showAll ? items : items.slice(0, 4);
-
   // TODO: Usa map() para generar el HTML de cada item
   // const itemsHtml = itemsToShow.map(item => {
   //   const { name, level } = item;
@@ -167,7 +198,6 @@ const renderItems = (showAll = false) => {
   //     </div>
   //   `;
   // }).join('');
-
   // TODO: Actualiza el contenedor de items
   // itemsList.innerHTML = itemsHtml;
 };
@@ -206,7 +236,6 @@ const renderLinks = () => {
 const renderStats = () => {
   // TODO: Extrae las estadísticas de entityData
   // const { stats } = entityData;
-
   // TODO: Crea array con labels descriptivos en español
   // const statsArray = [
   //   { label: 'Total', value: stats.total },
@@ -214,7 +243,6 @@ const renderStats = () => {
   //   { label: 'Rating', value: stats.rating },
   //   { label: 'Otro', value: stats.custom }
   // ];
-
   // TODO: Genera el HTML usando map()
   // const statsHtml = statsArray.map(stat => `
   //   <div class="stat-item">
@@ -222,7 +250,6 @@ const renderStats = () => {
   //     <span class="stat-label">${stat.label}</span>
   //   </div>
   // `).join('');
-
   // TODO: Actualiza el contenedor
   // statsContainer.innerHTML = statsHtml;
 };
@@ -246,10 +273,8 @@ const toggleTheme = () => {
   // const currentTheme = document.documentElement.dataset.theme;
   // const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
   // document.documentElement.dataset.theme = newTheme;
-
   // TODO: Actualiza el ícono del botón
   // themeToggle.textContent = newTheme === 'dark' ? '☀️' : '🌙';
-
   // TODO: (Opcional) Guarda en localStorage
   // localStorage.setItem('theme', newTheme);
 };
@@ -278,19 +303,16 @@ const copyInfo = () => {
   //   ${description}
   //   Contacto: ${contact?.email ?? 'No disponible'}
   // `.trim();
-
   // TODO: Copia al portapapeles
   // navigator.clipboard.writeText(infoText);
-
   // TODO: Muestra notificación
   // showToast('¡Información copiada al portapapeles!');
 };
 
 // Función auxiliar para mostrar notificaciones toast
-const showToast = message => {
+const showToast = (message) => {
   // toastMessage.textContent = message;
   // toast.classList.add('show');
-
   // setTimeout(() => {
   //   toast.classList.remove('show');
   // }, 3000);
