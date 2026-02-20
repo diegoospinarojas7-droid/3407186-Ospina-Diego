@@ -53,11 +53,11 @@ let editingItemId = null;
 //   moon: { name: 'Luna', emoji: '🌙' }
 // };
 
-const CATEGORIES = {
+const CATEGORIES = { 
   // TODO: Define las categorías de tu dominio
-  // category1: { name: 'Nombre en español', emoji: '🔹' },
-  // category2: { name: 'Nombre en español', emoji: '🔸' },
-  // category3: { name: 'Nombre en español', emoji: '🔷' },
+   product: { name: 'Producto', emoji: '🌿' },
+   agriculturalsale: { name: 'Ventas agricolas', emoji: '💲' },
+   pestcontrol: { name: 'control de plagas', emoji: '🚫' },
 };
 
 // Prioridades genéricas (adapta los nombres si es necesario)
@@ -66,6 +66,14 @@ const PRIORITIES = {
   medium: { name: 'Media', color: '#f59e0b' },
   low: { name: 'Baja', color: '#22c55e' },
 };
+
+
+
+// obtener valores mediante id
+const productos = document.getElementById("product")
+
+productos.textContent = CATEGORIES.product.name.product;
+
 
 // ============================================
 // TODO 2: PERSISTENCIA (LocalStorage)
