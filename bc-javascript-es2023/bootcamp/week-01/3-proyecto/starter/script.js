@@ -79,25 +79,26 @@
 
 const GreenHarvest = {
 //Propiedades basicas
-name: "GreenHarvest",
-description: "Empresa dedicada a la producción sostenible de alimentos orgánicos, utilizando técnicas innovadoras para cultivar productos frescos y saludables.";
-identifier: "SITCORE_2026",
+  name: "GreenHarvest",
+  description: "Empresa dedicada a la producción sostenible de alimentos orgánicos, utilizando técnicas innovadoras para cultivar productos frescos y saludables.",
+  identifier: "SITCORE_2026",
 
 // Propiedad de contacto o ubicacion (si aplica)
-contact: {
+  contact: {
   email: ("VentaProductos27@GreenHarvest.com"),
   phone:("3209855784"),
   location: "Manizales, Colombia",
-}
-
+},
 // Array de elementos relacionados (adapta a tu dominio)
 // Ejemplos: skills, ingredients, services, features, amenities
+
 items: [
   { name: "Cultivo hidropónico", level: 90, category: "Técnica de cultivo" },
   { name: "Productos orgánicos", level: 95, category: "Calidad de productos" },
   { name: "Sostenibilidad", level: 92, category: "Compromiso ambiental" },
-  { name: "Innovación tecnológica", level: 88, category: "Uso de tecnología" }
-],
+  { name: "Innovación tecnológica", level: 88, category: "Uso de tecnología"},
+ ],
+
 
   // Array de enlaces o referencias (si aplica)
   //links: [
@@ -114,7 +115,7 @@ items: [
   totaluser: 15000,
   activeruser: 10000,
   total: 8000, // Total de productos cultivados
-}
+   }
 };
 
 // ============================================
@@ -131,7 +132,8 @@ items: [
 // - Elementos de notificación (toast)
 
 // TODO: Agrega tus referencias al DOM aquí
-// const entityName = document.getElementById('entity-name');
+const entityName = document.getElementById('entity-name');
+const entityDescription = document.getElementById('userLocation')
 // const entityDescription = document.getElementById('entity-description');
 // const itemsList = document.getElementById('items-list');
 // const statsContainer = document.getElementById('stats');

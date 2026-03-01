@@ -55,14 +55,16 @@ let editingItemId = null;
 
 const CATEGORIES = { 
   // TODO: Define las categorías de tu dominio
-   product: { name: 'Producto', emoji: '🌿' },
-   agriculturalsale: { name: 'Ventas agricolas', emoji: '💲' },
+   OrganicProducts: { name: 'Productos Organicos', emoji: '🌿' },
+   AgriculturalInput: { name: 'Insumos Agricolas', emoji: '🚚' },
    pestcontrol: { name: 'control de plagas', emoji: '🚫' },
+   Graints: {name: 'Granos', emoji: '🫘' }, 
+   Fruits: {name: 'Frutas', emoji: '🍎' },
 };
 
 // Prioridades genéricas (adapta los nombres si es necesario)
 const PRIORITIES = {
-  high: { name: 'Alta', color: '#ef4444' },
+  high: { name: 'Alta', color: '#37f265' },
   medium: { name: 'Media', color: '#f59e0b' },
   low: { name: 'Baja', color: '#22c55e' },
 };
@@ -94,7 +96,7 @@ const loadItems = () => {
   // const stored = localStorage.getItem('celestialBodies');
   // return stored ? JSON.parse(stored) : [];
   // O más moderno:
-  // return JSON.parse(localStorage.getItem('celestialBodies') ?? '[]');
+  return JSON.parse(localStorage.getItem('ProductosAgricolas') ?? '[]');
 };
 
 /**
@@ -108,39 +110,43 @@ const saveItems = itemsToSave => {
   //
   // EJEMPLO:
   // localStorage.setItem('celestialBodies', JSON.stringify(itemsToSave));
+  localStorage.setItem('ProductosAgricolas', JSON.stringify(productos));
 };
 
 // ============================================
 // TODO 3: CRUD - CREAR ELEMENTO
 // ============================================
-
+{
 /**
- * Crea un nuevo elemento con los datos proporcionados
+ * Crea un nuevo elemento con los datos proporcionadosç
  * @param {Object} itemData - Datos del nuevo elemento
- * @returns {Array} Nuevo array de elementos (sin mutar el original)
+ * @returns {Array} array de elementos guardados, o array vacio
  */
-const createItem = (itemData = {}) => {
+  const createItem = (itemData = {}) => 
+  items = loadItems();
+  const baseItem = { 
+    id: Date.now(),
+     createdAt: new Date().toISOString(), 
+     updatedAt: null, 
+     active: true, 
+    };
+    const newItem = { ...baseItem, ...itemData }; 
+    const newItems = [...items, newItem];
+    saveItems(newItems);
+    return newItems;
   // TODO: Implementa la creación de un nuevo elemento
   // 1. Crea un objeto con las propiedades base:
   //    - id: Date.now()
   //    - createdAt: new Date().toISOString()
   //    - updatedAt: null
   //    - active: true (o el estado inicial de tu dominio)
-  //
   // 2. Usa spread operator para combinar:
   //    - Valores por defecto (default parameters)
   //    - Los datos recibidos en itemData
-  //
   // 3. Usa spread para crear nuevo array: [...items, newItem]
-  //
   // 4. Guarda en localStorage
-  //
   // 5. Retorna el nuevo array
-  //
   // EJEMPLO (Planetario):
-  // const newItem = {
-  //   id: Date.now(),
-  //   name: itemData.name ?? '',
   //   description: itemData.description ?? '',
   //   category: itemData.category ?? 'planet',
   //   priority: itemData.priority ?? 'medium',
@@ -156,7 +162,6 @@ const createItem = (itemData = {}) => {
   // saveItems(newItems);
   // return newItems;
 };
-
 // ============================================
 // TODO 4: CRUD - ACTUALIZAR ELEMENTO
 // ============================================

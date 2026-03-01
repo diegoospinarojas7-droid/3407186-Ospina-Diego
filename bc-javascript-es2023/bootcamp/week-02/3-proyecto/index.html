@@ -49,28 +49,28 @@
 
         <div class="form-group">
           <!-- TODO: Cambia el label y placeholder -->
-          <label for="item-name">Nombre </label>
+          <label for="item-name">Todos</label>
           <input
             type="text"
             id="item-name"
-            placeholder="Nombre del elemento"
+            placeholder="productos  "
             required
           >
         </div>
 
         <div class="form-group">
-          <label for="item-description">Descripción</label>
+          <label for="item-description">Precios</label>
           <textarea
             id="item-description"
             rows="3"
-            placeholder="Detalles adicionales (opcional)"
+            placeholder="De menor a mayor (opcional)"
           ></textarea>
         </div>
 
         <div class="form-row">
           <div class="form-group">
             <!-- TODO: Cambia las categorías según tu dominio -->
-            <label for="item-category">Categoría</label>
+            <label for="item-category">Produccion disponible</label>
             <select id="item-category">
               <!--
                 EJEMPLO Planetario:
@@ -79,19 +79,21 @@
                 <option value="asteroid">☄️ Asteroide</option>
               -->
               <option value="Producto" id="product">🔹 Loading</option>
-              <option value="Ventas agricolas">🔸 </option>
-              <option value="control de plagas">🔷 Categoría 3</option>
-              <option value="control de plagas">📌 Otro</option>
+              <option value="productos organicos">OrganicProducts </option>
+              <option value="control de plagas">PestControl</option>
+              <option value="insumos agricolas">AgriculturalInputs</option>
+              <option value="granos">Grains</option>
+              <option value="frutas">Fruits</option>
             </select>
           </div>
 
           <div class="form-group">
             <!-- TODO: Opcionalmente renombra "Prioridad" según tu dominio -->
-            <label for="item-priority">Prioridad/Nivel</label>
+            <label for="item-priority">Disponibilidad</label>
             <select id="item-priority">
-              <option value="low">🟢 Baja</option>
-              <option value="medium" selected>🟡 Media</option>
-              <option value="high">🔴 Alta</option>
+              <option value="low">🟢 Disponible</option>
+              <option value="medium" selected>🟡 Pocas Unidades</option>
+              <option value="high">🔴 Agotado</option>
             </select>
           </div>
         </div>
@@ -107,7 +109,7 @@
 
         <div class="form-actions">
           <button type="submit" class="btn btn-primary" id="submit-btn">
-            Crear
+            Comprar
           </button>
           <button type="button" class="btn btn-secondary" id="cancel-btn" style="display: none;">
             Cancelar
@@ -120,34 +122,36 @@
     <section class="filters-section">
       <div class="filters">
         <div class="filter-group">
-          <label for="filter-status">Estado:</label>
+          <label for="filter-status">Condicion:</label>
           <select id="filter-status">
             <option value="all">Todos</option>
             <!-- TODO: Cambia los términos según tu dominio -->
-            <option value="active">Activos</option>
-            <option value="inactive">Inactivos</option>
+            <option value="active">Organicos</option>
+            <option value="inactive">Tradicionales</option>
           </select>
         </div>
 
         <div class="filter-group">
-          <label for="filter-category">Categoría:</label>
+          <label for="filter-category">Productos:</label>
           <select id="filter-category">
-            <option value="all">Todas</option>
+            <option value="all">Todos</option>
             <!-- TODO: Repite las mismas categorías del formulario -->
-            <option value="category1">Categoría 1</option>
-            <option value="category2">Categoría 2</option>
-            <option value="category3">Categoría 3</option>
+            <option value="category1">OrganicProducts</option>
+            <option value="category2">PestControl</option>
+            <option value="category3">AgriculturalInputs</option>
+            <option value="category4">Grains</option>
+            <option value="category5">Fruits</option>
             <option value="other">Otro</option>
           </select>
         </div>
 
         <div class="filter-group">
-          <label for="filter-priority">Prioridad:</label>
+          <label for="filter-priority">Precios:</label>
           <select id="filter-priority">
-            <option value="all">Todas</option>
-            <option value="high">Alta</option>
-            <option value="medium">Media</option>
-            <option value="low">Baja</option>
+            <option value="all">Todos</option>
+            <option value="high">Economico</option>
+            <option value="medium">Intermedio</option>
+            <option value="low">Premium</option>
           </select>
         </div>
 
@@ -166,9 +170,9 @@
     <section class="items-section">
       <div class="items-header">
         <!-- TODO: Cambia el título -->
-        <h2>📝 Lista de Elementos</h2>
+        <h2>♻️ actualizar inventario</h2>
         <button class="btn btn-outline" id="clear-inactive">
-          🗑️ Limpiar Inactivos
+          UPDATE
         </button>
       </div>
 
@@ -184,7 +188,7 @@
 
     <!-- Detailed Stats -->
     <section class="detailed-stats">
-      <h3>📊 Estadísticas Detalladas</h3>
+      <h3>Producion Agricola</h3>
       <div id="stats-details" class="stats-grid">
         <!-- Las estadísticas se renderizarán aquí con JavaScript -->
       </div>
