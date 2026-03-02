@@ -47,75 +47,86 @@
 // };
 
 //const GreenHarvest = {
-  // TODO: Reemplaza 'entity' con el nombre de tu entidad en inglés
-  // TODO: Agrega las propiedades específicas de tu dominio
-  // Propiedades básicas (adapta a tu dominio)
-  // name: '',
-  // description: '',
-  // identifier: '', // código, id, número, etc.
-  // Propiedad de contacto o ubicación (si aplica)
-  // contact: {
-  //   email: '',
-  //   phone: '',
-  //   location: ''
-  // },
-  // Array de elementos relacionados (adapta a tu dominio)
-  // Ejemplos: skills, ingredients, services, features, amenities
-  // items: [
-  //   { name: '', level: 0, category: '' },
-  //   { name: '', level: 0, category: '' }
-  // ],
-  // Array de enlaces o referencias (si aplica)
-  // links: [
-  //   { platform: '', url: '', icon: '' }
-  // ],
-  // Estadísticas o contadores (adapta a tu dominio)
-  // stats: {
-  //   total: 0,
-  //   active: 0,
-  //   rating: 0,
-  //   custom: 0  // renombra según tu dominio
-  // }
-
-const GreenHarvest = {
-//Propiedades basicas
-  name: "GreenHarvest",
-  description: "Empresa dedicada a la producción sostenible de alimentos orgánicos, utilizando técnicas innovadoras para cultivar productos frescos y saludables.",
-  identifier: "SITCORE_2026",
-
-// Propiedad de contacto o ubicacion (si aplica)
-  contact: {
-  email: ("VentaProductos27@GreenHarvest.com"),
-  phone:("3209855784"),
-  location: "Manizales, Colombia",
-},
+// TODO: Reemplaza 'entity' con el nombre de tu entidad en inglés
+// TODO: Agrega las propiedades específicas de tu dominio
+// Propiedades básicas (adapta a tu dominio)
+// name: '',
+// description: '',
+// identifier: '', // código, id, número, etc.
+// Propiedad de contacto o ubicación (si aplica)
+// contact: {
+//   email: '',
+//   phone: '',
+//   location: ''
+// },
 // Array de elementos relacionados (adapta a tu dominio)
 // Ejemplos: skills, ingredients, services, features, amenities
+// items: [
+//   { name: '', level: 0, category: '' },
+//   { name: '', level: 0, category: '' }
+// ],
+// Array de enlaces o referencias (si aplica)
+// links: [
+//   { platform: '', url: '', icon: '' }
+// ],
+// Estadísticas o contadores (adapta a tu dominio)
+// stats: {
+//   total: 0,
+//   active: 0,
+//   rating: 0,
+//   custom: 0  // renombra según tu dominio
+// }
 
-items: [
-  { name: "Cultivo hidropónico", level: 90, category: "Técnica de cultivo" },
-  { name: "Productos orgánicos", level: 95, category: "Calidad de productos" },
-  { name: "Sostenibilidad", level: 92, category: "Compromiso ambiental" },
-  { name: "Innovación tecnológica", level: 88, category: "Uso de tecnología"},
- ],
+const GreenHarvest = {
+  //Propiedades basicas
+  name: "GreenHarvest",
+  description:
+    "Empresa dedicada a la producción sostenible de alimentos orgánicos, utilizando técnicas innovadoras para cultivar productos frescos y saludables.",
+  identifier: "SITCORE_2026",
 
+  // Propiedad de contacto o ubicacion (si aplica)
+  contact: {
+    email: "VentaProductos27@GreenHarvest.com",
+    phone: "3209855784",
+    location: "Manizales, Colombia",
+  },
+  // Array de elementos relacionados (adapta a tu dominio)
+  // Ejemplos: skills, ingredients, services, features, amenities
+
+  items: [
+    { name: "Cultivo hidropónico", level: 90, category: "Técnica de cultivo" },
+    {
+      name: "Productos orgánicos",
+      level: 95,
+      category: "Calidad de productos",
+    },
+    { name: "Sostenibilidad", level: 92, category: "Compromiso ambiental" },
+    {
+      name: "Innovación tecnológica",
+      level: 88,
+      category: "Uso de tecnología",
+    },
+  ],
 
   // Array de enlaces o referencias (si aplica)
   //links: [
   // {platform: "Sitio web", url: "https://www.greenharvest.com", icon: ""}
   // ]
   links: [
-  { name: "BankRouter", url: "https://www.greenharvest.com" },
-  { name: "banktripol", url: "https://www.linkedin.com/company/greenharvest" },
-  { name: "bank3h", url: "https://www.instagram.com/greenharvest" },
-],
+    { name: "BankRouter", url: "https://www.greenharvest.com" },
+    {
+      name: "banktripol",
+      url: "https://www.linkedin.com/company/greenharvest",
+    },
+    { name: "bank3h", url: "https://www.instagram.com/greenharvest" },
+  ],
 
   // Estadísticas o contadores (adapta a tu dominio)
   stats: {
-  totaluser: 15000,
-  activeruser: 10000,
-  total: 8000, // Total de productos cultivados
-   }
+    totaluser: 15000,
+    activeruser: 10000,
+    total: 8000, // Total de productos cultivados
+  },
 };
 
 // ============================================
@@ -132,17 +143,20 @@ items: [
 // - Elementos de notificación (toast)
 
 // TODO: Agrega tus referencias al DOM aquí
-const entityName = document.getElementById('entity-name');
-const entityDescription = document.getElementById('userLocation')
-// const entityDescription = document.getElementById('entity-description');
-// const itemsList = document.getElementById('items-list');
-// const statsContainer = document.getElementById('stats');
-// const themeToggle = document.getElementById('theme-toggle');
-// const copyBtn = document.getElementById('copy-btn');
-// const toggleItemsBtn = document.getElementById('toggle-items');
-// const toast = document.getElementById('toast');
-// const toastMessage = document.getElementById('toast-message');
-
+const entityName = document.getElementById("entity-name");
+const entityDescription = document.getElementById("userLocation");
+const userPhone = document.getElementById("userPhone");
+const userEmail = document.getElementById("userEmail");
+const entityTitle = document.getElementById("entity-title");
+//const entityDescription = document.getElementById('entity-description');
+const itemsList = document.getElementById("items-list");
+const statsContainer = document.getElementById("stats");
+const themeToggle = document.getElementById("theme-toggle");
+const copyBtn = document.getElementById("copy-btn");
+const toggleItemsBtn = document.getElementById("toggle-items");
+const toast = document.getElementById("toast");
+const toastMessage = document.getElementById("toast-message");
+const sociaLinksContainer = document.getElementById("social-links");
 // ============================================
 // TODO 3: Renderizar información básica
 // ============================================
@@ -152,12 +166,24 @@ const entityDescription = document.getElementById('userLocation')
 // 3. Muestre la información principal de tu entidad
 
 const renderBasicInfo = () => {
-  // TODO: Usa destructuring para extraer las propiedades
-  // const { name, description, contact: { email, phone } } = entityData;
-  // TODO: Actualiza los elementos del DOM usando template literals
-  // entityName.textContent = name;
-  // entityDescription.innerHTML = `<p>${description}</p>`;
+  const {
+    name,
+    description,
+    contact: { email, phone, location },
+  } = GreenHarvest;
+  entityName.textContent = `${name}`;
+  entityTitle.textContent = "Financial tecnology services";
+  entityDescription.textContent = `${description}`;
+  userEmail.textContent = `Email: ${email}`;
+  userPhone.textContent = `Phone: ${phone}`;
+  userLocation.textContent = `Location: ${location}`;
 };
+renderBasicInfo();
+// TODO: Usa destructuring para extraer las propiedades
+// const { name, description, contact: { email, phone } } = entityData;
+// TODO: Actualiza los elementos del DOM usando template literals
+// entityName.textContent = name;
+// entityDescription.innerHTML = `<p>${description}</p>`;
 
 // ============================================
 // TODO 4: Renderizar lista de elementos
@@ -181,27 +207,25 @@ const renderBasicInfo = () => {
 // </div>
 
 const renderItems = (showAll = false) => {
-  // TODO: Extrae el array de items de entityData
-  // const { items } = entityData;
-  // TODO: Filtra los items si showAll es false
-  // const itemsToShow = showAll ? items : items.slice(0, 4);
-  // TODO: Usa map() para generar el HTML de cada item
-  // const itemsHtml = itemsToShow.map(item => {
-  //   const { name, level } = item;
-  //   return `
-  //     <div class="item">
-  //       <div class="item-name">${name}</div>
-  //       <div class="item-level">
-  //         <span>${level}%</span>
-  //         <div class="level-bar">
-  //           <div class="level-fill" style="width: ${level}%"></div>
-  //         </div>
-  //       </div>
-  //     </div>
-  //   `;
-  // }).join('');
-  // TODO: Actualiza el contenedor de items
-  // itemsList.innerHTML = itemsHtml;
+  const { items } = GreenHarvest;
+  const itemsToShow = showAll ? items : items.slice(0, 4);
+  const itemsHtml = itemsToShow
+    .map((item) => {
+      const { name, level } = item;
+      return;
+      <div class="item">
+        <div class="item-name">${name}</div>
+        <div class="item-level">
+          <span>${level}%</span>
+          <div class="level-bar">
+            <div class="level-fill" style="width: ${level}%"></div>
+          </div>
+        </div>
+      </div>;
+    })
+    .join("");
+
+  itemsList.innerHTML = itemsHtml;
 };
 
 // ============================================
@@ -214,10 +238,18 @@ const renderItems = (showAll = false) => {
 // 4. Actualice el contenedor de links
 
 const renderLinks = () => {
-  // TODO: Implementa el renderizado de enlaces
-  // Si tu dominio no tiene enlaces, adapta esta función para
-  // mostrar otra información relevante (categorías, tags, etc.)
+  const { links } = GreenHarvest;
+  const linksHtml = links
+    .map((link) => {
+      const { name, url } = link;
+      return `<a href="${url}" target="_blank" class="social-link">${name}</a>`;
+    })
+    .join("");
+  sociaLinksContainer.innerHTML = linksHtml;
 };
+renderLinks();
+renderBasicInfo();
+renderItems();
 
 // ============================================
 // TODO 6: Calcular y renderizar estadísticas
@@ -236,26 +268,24 @@ const renderLinks = () => {
 // </div>
 
 const renderStats = () => {
-  // TODO: Extrae las estadísticas de entityData
-  // const { stats } = entityData;
-  // TODO: Crea array con labels descriptivos en español
-  // const statsArray = [
-  //   { label: 'Total', value: stats.total },
-  //   { label: 'Activos', value: stats.active },
-  //   { label: 'Rating', value: stats.rating },
-  //   { label: 'Otro', value: stats.custom }
-  // ];
-  // TODO: Genera el HTML usando map()
-  // const statsHtml = statsArray.map(stat => `
-  //   <div class="stat-item">
-  //     <span class="stat-value">${stat.value}</span>
-  //     <span class="stat-label">${stat.label}</span>
-  //   </div>
-  // `).join('');
-  // TODO: Actualiza el contenedor
-  // statsContainer.innerHTML = statsHtml;
+  const { stats } = GreenHarvest;
+  const statsArray = [
+    { label: "Total Usuarios", value: stats.totaluser },
+    { label: "Activos Usuarios", value: stats.activeruser },
+    { label: "Total Productos", value: stats.total },
+  ];
+  const statsHtml = statsArray
+    .map((stat) => {
+      <div class="stat-item">
+        <span class="stat-value">${value}</span>
+        <span class="stat-label">${label}</span>
+      </div>;
+    })
+    .join("");
+  statsContainer.innerHTML = statsHtml;
 };
 
+renderStats();
 // ============================================
 // TODO 7: Funcionalidad de cambio de tema
 // ============================================
@@ -271,23 +301,19 @@ const renderStats = () => {
 // 2. Aplicarlo si existe
 
 const toggleTheme = () => {
-  // TODO: Implementa el cambio de tema
-  // const currentTheme = document.documentElement.dataset.theme;
-  // const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-  // document.documentElement.dataset.theme = newTheme;
-  // TODO: Actualiza el ícono del botón
-  // themeToggle.textContent = newTheme === 'dark' ? '☀️' : '🌙';
-  // TODO: (Opcional) Guarda en localStorage
+  const currentTheme = document.documentElement.dataset.theme || "light";
+  const newTheme = currentTheme === "dark" ? "light" : "dark";
+  document.documentElement.dataset.theme = newTheme;
+  themeToggle.textContent = newTheme === "dark" ? "☀️" : "🌙";
   // localStorage.setItem('theme', newTheme);
 };
 
 const loadTheme = () => {
-  // TODO: Carga el tema desde localStorage
-  // const savedTheme = localStorage.getItem('theme') ?? 'light';
-  // document.documentElement.dataset.theme = savedTheme;
-  // themeToggle.textContent = savedTheme === 'dark' ? '☀️' : '🌙';
+  const savedTheme = localStorage.getItem("theme");
+  document.documentElement.dataset.theme = savedTheme;
+  themeToggle.textContent = savedTheme === "dark" ? "☀️" : "🌙";
 };
-
+loadTheme();
 // ============================================
 // TODO 8: Funcionalidad de copiar información
 // ============================================
@@ -298,28 +324,29 @@ const loadTheme = () => {
 // 4. Use la función auxiliar showToast
 
 const copyInfo = () => {
-  // TODO: Construye el texto a copiar
-  // const { name, description, contact } = entityData;
-  // const infoText = `
-  //   ${name}
-  //   ${description}
-  //   Contacto: ${contact?.email ?? 'No disponible'}
-  // `.trim();
-  // TODO: Copia al portapapeles
-  // navigator.clipboard.writeText(infoText);
-  // TODO: Muestra notificación
-  // showToast('¡Información copiada al portapapeles!');
-};
+  const {
+    name,
+    description,
+    contact: { email, phone },
+  } = GreenHarvest;
+  const infoText = `
+  ${name}
+  ${description}
+  contacto: $(contact?.emaill ?? 'No disponible')
+  .trim();
 
-// Función auxiliar para mostrar notificaciones toast
+  
+  ${phone}`;
+};
+copyInfo();
 const showToast = (message) => {
-  // toastMessage.textContent = message;
-  // toast.classList.add('show');
-  // setTimeout(() => {
-  //   toast.classList.remove('show');
-  // }, 3000);
+  toastMessage.textContent = message;
+  toast.classList.add("show");
+  setTimeout(() => {
+    toast.classList.remove("show");
+  }, 3000);
 };
-
+setTimeout();
 // ============================================
 // TODO 9: Funcionalidad de mostrar/ocultar items
 // ============================================
@@ -329,14 +356,23 @@ const showToast = (message) => {
 // 3. Llame a renderItems con el parámetro apropiado
 // 4. Actualice el texto del botón ("Mostrar más" / "Mostrar menos")
 
+//let showingAllItems = false;
+
+//const handleToggleItems = () => {
+// TODO: Implementa la lógica de toggle
+// showingAllItems = !showingAllItems;
+// renderItems(showingAllItems);
+// toggleItemsBtn.textContent = showingAllItems ? 'Mostrar menos' : 'Mostrar más';
 let showingAllItems = false;
 
-const handleToggleItems = () => {
-  // TODO: Implementa la lógica de toggle
-  // showingAllItems = !showingAllItems;
-  // renderItems(showingAllItems);
-  // toggleItemsBtn.textContent = showingAllItems ? 'Mostrar menos' : 'Mostrar más';
+const handletoggleItems = () => {
+  showingAllItems = !showingAllItems;
+  renderItems(showingAllItems);
+  toggleItemsBtn.textContent = showingAllItems
+    ? "Mostrar menos"
+    : "Mostrar más";
 };
+toggleItemsBtn.addEventListener("click", handletoggleItems);
 
 // ============================================
 // TODO 10: Event Listeners
@@ -350,7 +386,9 @@ const handleToggleItems = () => {
 // themeToggle.addEventListener('click', toggleTheme);
 // copyBtn.addEventListener('click', copyInfo);
 // toggleItemsBtn.addEventListener('click', handleToggleItems);
-
+themeToggle.addEventListener("click", toggleTheme);
+copyBtn.addEventListener("click", copyInfo);
+toggleItemsBtn.addEventListener("click", handletoggleItems);
 // ============================================
 // TODO 11: Inicializar la aplicación
 // ============================================
@@ -363,17 +401,22 @@ const handleToggleItems = () => {
 // 6. Muestre un mensaje de éxito en la consola
 
 const init = () => {
-  // TODO: Inicializa todos los componentes
-  // loadTheme();
-  // renderBasicInfo();
-  // renderItems();
-  // renderLinks();
-  // renderStats();
-  // console.log('✅ Aplicación inicializada correctamente');
+  loadTheme();
+  renderBasicInfo();
+  renderItems();
+  renderLinks();
+  renderStats();
+  console.log("✅ Aplicación inicializada correctamente");
 };
-
+// TODO: Inicializa todos los componentes
+// loadTheme();
+// renderBasicInfo();
+// renderItems();
+// renderLinks();
+// renderStats();
+// console.log('✅ Aplicación inicializada correctamente');
 // Ejecuta init cuando el DOM esté listo
-init();
+document.addEventListener("DOMContentLoaded", init);
 
 // ============================================
 // CHECKLIST DE VERIFICACIÓN
