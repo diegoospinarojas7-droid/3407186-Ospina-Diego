@@ -1,243 +1,206 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Interactive Business Card</title>
-    <link rel="stylesheet" href="styles.css" />
-    <style>
-      .item {
-        margin-bottom: 20px;
-      }
-      .item-name {
-        font-weight: bold;
-      }
-      .item-category {
-        font-style: italic;
-        color: #13d379;
-      }
-      .level-bar {
-        background: #eee;
-        height: 15px;
-        width: 100%;
-      }
-      .level-fill {
-        background: #19d348;
-        height: 10px;
-      }
-    </style>
-  </head>
-  <body>
-    <div class="container">
-      <!-- Pdpdpdpdpdpd -->
-      <head>
-        <script>
-          (document.addEventListener(DOMContentLoaded),
-            () => {
-              const GreenHarvest = {
-                name: "GreenHarvest",
-                title: "Venta de Productos Agricolas",
-                contact: { email: "VentaProductos27@GreenHarvest.com" },
-                phone: "3209855784",
-                location: "Manizales, Colombia",
-              };
-            });
-          //Referencias a elementos del DOM
-          const entityName = document.getElementById("userName");
-          const entityTitle = document.getElementById("userTitle");
-          const entityLocation = document.getElementById("userLocation");
-          const entitydescription = document.getElementById("userBio");
-          const entityEmail = document.getElementById("userEmail");
-          const userphone = document.getElementById("userPhone");
-          const socialLinks = document.getElementById("socialLinks");
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Interactive Business Card</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .item {margin-bottom: 20px;}
+    .item-name {font-weight: bold;}
+    .item-category {font-style: italic; color: #13d379;}
+    .level-bar {background: #eee; height: 15px; width: 100%;}
+    .level-fill {background: #19d348; height: 10px;}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <button id="themeToggle" class="theme-toggle">
+      <span class="theme-icon">🌙</span>
+    </button>
 
-          const statsContainer = document.getElementById("stats");
-
-          const themeToggle = document.getElementById("themeToggle");
-          const copy8tn = document.getElementById("copyEmailBtn");
-          const tpggleItems8tn = document.getElementById("toggleSkills");
-
-          const toast = document.getElementById("toast");
-          const toastMessage = document.getElementById("toastMessage");
-          //Funcion para renderizar la informacion
-          const renderBasicInfo = () => {
-            const {
-              name,
-              description,
-              contact: { email, phone, location },
-            } = GreenHarvest;
-            entityName.textContent = `${name}`;
-            entityTitle.textContent = "Financial tecnology services";
-            entityDescription.textContent = `${description}`;
-            userEmail.textContent = `Email: ${email}`;
-            userPhone.textContent = `Phone: ${phone}`;
-            userLocation.textContent = `Location: ${location}`;
-          };
-          renderBasicInfo();
-
-          items: [
-            {
-              name: "Cultivo hidropónico",
-              level: 90,
-              category: "Técnica de cultivo",
-            },
-            {
-              name: "Productos orgánicos",
-              level: 95,
-              category: "Calidad de productos",
-            },
-            {
-              name: "Sostenibilidad",
-              level: 92,
-              category: "Compromiso ambiental",
-            },
-            {
-              name: "Innovación tecnológica",
-              level: 88,
-              category: "Uso de tecnología",
-            },
-          ];
-
-          const itemList = document.getElementById("skillsList");
-          const renderItems = (showAll = false) => {
-            const { items } = GreenHarvest;
-            const itemsToShow = showAll ? items : items.slice(0, 5);
-            const itemsHtml = itemsToShow
-              .map((item) => {
-                const { name, level, category } = item;
-                return `
-  <class="item">
-    <div class="item-name">${name}</div>  
-    <div class="item-category">${category}</div>
-    <div class="item-level"
-      <span>${level}%</span>
-      <div class="level-bar">
-        <div class="level-fill" style="width: ${level}%"></div>
+    <div class="card" id="businessCard">
+      <div class="card-header">
+        <div class="avatar">
+          <img src="https://via.placeholder.com/150" alt="profile avatar" id="avatarImg" />
         </div>
-        </div>
-      `;
-              })
-              .join("");
-            itemList.innerHTML = itemsHtml;
-          };
-          renderItems();
-
-          const renderLinks = () => {
-            const { links } = GreenHarvest;
-            const linksHtml = links
-              .map(
-                ({ name, url }) =>
-                  ` <a href="${url}" target="_blank" class="social-link">${name}</a>`,
-              )
-              .join("");
-            socialLinks.innerHTML = linksHtml;
-          };
-
-          renderLinks();
-          const renderStats = () => {
-            const { stats } = GreenHarvest;
-            const statsArray = [
-              { label: "Usuarios Totales", value: stats.totalUsers },
-              { label: "Usuarios Activos", value: stats.activeUsers },
-              { label: "Transacciones", value: stats.totalTransactions },
-            ];
-            const statsHtml = statsArray
-              .map(
-                (stat) =>
-                  `<div class="stat-item"><span class="stat-label">${stat.label}</span><span class="stat-value">${stat.value}</span></div>`,
-              )
-              .join("");
-            statsContainer.innerHTML = statsHtml;
-          };
-
-          renderStats();
-        </script>
-      </head>
-      <body>
-        <h1 id="entityName"></h1>
-        <h2 id="entityName"></h2>
-        <p id="entityLocation"></p>
-        <div id="entityDescription"></div>
-        <p id="userEmail"></p>
-        <p id="userPhone"></p>
-      </body>
-
-      <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme">
-        <span class="theme-icon">🌙</span>
-      </button>
-
-      <!-- Business Card -->
-      <div class="card" id="businessCard">
-        <!-- Header Section -->
-        <div class="card-header">
-          <div class="avatar">
-            <img
-              src="https://via.placeholder.com/150"
-              alt="profile avatar"
-              id="avatarImg"
-            />
-          </div>
-          <div class="header-info">
-            <h1 id="userName"></h1>
-            <p class="title" id="userTitle">GreenHarvest</p>
-            <p class="location" id="userLocation">Manizales,colombia</p>
-          </div>
-        </div>
-
-        <!-- Bio Section -->
-        <div class="card-section">
-          <h2>Venta de Productos Agricolas</h2>
-          <p id="userBio" class="bio">Servimos al Ambiente</p>
-        </div>
-
-        <!-- Contact Section -->
-        <div class="card-section">
-          <h2>Contact</h2>
-          <div class="contact-info">
-            <div class="contact-item">
-              <span class="icon">📧</span>
-              <span id="userEmail">VentaProductos27@GreenHarvest.com</span>
-              <button id="copyEmailBtn" class="btn btn-small">Copy</button>
-            </div>
-            <div class="contact-item">
-              <span class="icon">📱</span>
-              <span id="userPhone">3209855784</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Skills Section -->
-        <div class="card-section">
-          <h2>Skills</h2>
-          <div id="skillsList" class="skills-list">Loading...</div>
-          <button id="toggleSkills" class="btn btn-secondary">Show More</button>
-        </div>
-
-        <!-- Social Media Section -->
-        <div class="card-section">
-          <h2>Connect</h2>
-          <div id="socialLinks" class="social-links">Loading...</div>
-        </div>
-
-        <!-- Statistics Section -->
-        <div class="card-section">
-          <h2>Statistics</h2>
-          <div id="stats" class="stats-grid">Loading...</div>
+        <div class="header-info">
+          <h1 id="userName"></h1>
+          <p class="title" id="userTitle"></p>
+          <p class="location" id="userLocation"></p>
         </div>
       </div>
 
-      <!-- Footer -->
-      <footer class="footer">
-        <p>Built with ❤️ using ES2023 JavaScript</p>
-        <p class="small">Week 01 Project - JavaScript Modern Bootcamp</p>
-      </footer>
+      <div class="card-section">
+        <h2>Bio</h2>
+        <p id="userBio" class="bio"></p>
+      </div>
+
+      <div class="card-section">
+        <h2>Contact</h2>
+        <div class="contact-info">
+          <div class="contact-item">
+            <span class="icon">📧</span>
+            <span id="userEmail"></span>
+            <button id="copyEmailBtn" class="btn btn-small">Copy</button>
+          </div>
+          <div class="contact-item">
+            <span class="icon">📱</span>
+            <span id="userPhone"></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="card-section">
+        <h2>Skills</h2>
+        <div id="skillsList" class="skills-list">Loading...</div>
+        <button id="toggleSkills" class="btn btn-secondary">Show More</button>
+      </div>
+
+      <div class="card-section">
+        <h2>Connect</h2>
+        <div id="socialLinks" class="social-links">Loading...</div>
+      </div>
+
+      <div class="card-section">
+        <h2>Statistics</h2>
+        <div id="stats" class="stats-grid">Loading...</div>
+      </div>
     </div>
 
-    <!-- Toast Notification -->
-    <div id="toast" class="toast">
-      <span id="toastMessage"></span>
-    </div>
+    <footer class="footer">
+      <p>Built with ❤️ using ES2023 JavaScript</p>
+      <p class="small">Week 01 Project - JavaScript Modern Bootcamp</p>
+    </footer>
+  </div>
 
-    <script src="starter/script.js"></script>
-  </body>
+  <div id="toast" class="toast">
+    <span id="toastMessage"></span>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const GreenHarvest = {
+        name: "GreenHarvest",
+        title: "Venta de Productos Agricolas",
+        description: "Servimos al Ambiente",
+        contact: { 
+          email: "VentaProductos27@GreenHarvest.com",
+          phone: "3209855784"
+        },
+        location: "Manizales, Colombia",
+        items: [
+          { name: "Cultivo hidropónico", level: 90, category: "Técnica de cultivo" },
+          { name: "Calidad de productos", level: 95, category: "Calidad" },
+          { name: "Sostenibilidad", level: 92, category: "Compromiso ambiental" },
+          { name: "Innovación tecnológica", level: 88, category: "Uso de tecnología" },
+          { name: "Distribución", level: 85, category: "Logística" },
+          { name: "Atención al cliente", level: 87, category: "Servicio" }
+        ],
+        links: [
+          { name: "Website", url: "https://greenharvest.com" },
+          { name: "LinkedIn", url: "https://linkedin.com/company/greenharvest" }
+        ],
+        stats: {
+          totalUsers: 1500,
+          activeUsers: 1200,
+          totalTransactions: 5000
+        }
+      };
+
+      // Referencias al DOM
+      const entityName = document.getElementById("userName");
+      const entityTitle = document.getElementById("userTitle");
+      const entityLocation = document.getElementById("userLocation");
+      const entityDescription = document.getElementById("userBio");
+      const entityEmail = document.getElementById("userEmail");
+      const userPhone = document.getElementById("userPhone");
+      const socialLinks = document.getElementById("socialLinks");
+      const statsContainer = document.getElementById("stats");
+      const themeToggle = document.getElementById("themeToggle");
+      const copyBtn = document.getElementById("copyEmailBtn");
+      const toggleSkillsBtn = document.getElementById("toggleSkills");
+      const toast = document.getElementById("toast");
+      const toastMessage = document.getElementById("toastMessage");
+
+      // Función para renderizar información básica
+      const renderBasicInfo = () => {
+        const { name, title, description, contact, location } = GreenHarvest;
+        entityName.textContent = name;
+        entityTitle.textContent = title;
+        entityDescription.textContent = description;
+        entityEmail.textContent = contact.email;
+        userPhone.textContent = contact.phone;
+        entityLocation.textContent = location;
+      };
+      renderBasicInfo();
+
+      // Renderizar Skills
+      const itemList = document.getElementById("skillsList");
+      let showAllSkills = false;
+      
+      const renderItems = (showAll = false) => {
+        const { items } = GreenHarvest;
+        const itemsToShow = showAll ? items : items.slice(0, 5);
+        const itemsHtml = itemsToShow
+          .map((item) => {
+            const { name, level, category } = item;
+            return `
+              <div class="item">
+                <div class="item-name">${name}</div>  
+                <div class="item-category">${category}</div>
+                <div class="item-level">
+                  <span>${level}%</span>
+                  <div class="level-bar">
+                    <div class="level-fill" style="width: ${level}%"></div>
+                  </div>
+                </div>
+              </div>
+            `;
+          })
+          .join("");
+        itemList.innerHTML = itemsHtml;
+      };
+      renderItems();
+
+      toggleSkillsBtn.addEventListener('click', () => {
+        showAllSkills = !showAllSkills;
+        toggleSkillsBtn.textContent = showAllSkills ? 'Show Less' : 'Show More';
+        renderItems(showAllSkills);
+      });
+
+      // Renderizar Links
+      const renderLinks = () => {
+        const { links } = GreenHarvest;
+        const linksHtml = links
+          .map(({ name, url }) => 
+            `<a href="${url}" target="_blank" class="social-link">${name}</a>`
+          )
+          .join("");
+        socialLinks.innerHTML = linksHtml;
+      };
+      renderLinks();
+
+      // Renderizar Stats
+      const renderStats = () => {
+        const { stats } = GreenHarvest;
+        const statsArray = [
+          { label: "Usuarios Totales", value: stats.totalUsers },
+          { label: "Usuarios Activos", value: stats.activeUsers },
+          { label: "Transacciones", value: stats.totalTransactions },
+        ];
+        const statsHtml = statsArray
+          .map((stat) => 
+            `<div class="stat-item">
+              <span class="stat-label">${stat.label}</span>
+              <span class="stat-value">${stat.value}</span>
+            </div>`
+          )
+          .join("");
+        statsContainer.innerHTML = statsHtml;
+      };
+      renderStats();
+    });
+  </script>
+</body>
 </html>

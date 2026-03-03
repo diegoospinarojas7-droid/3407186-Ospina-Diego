@@ -95,17 +95,9 @@ const GreenHarvest = {
 
   items: [
     { name: "Cultivo hidropónico", level: 90, category: "Técnica de cultivo" },
-    {
-      name: "Productos orgánicos",
-      level: 95,
-      category: "Calidad de productos",
-    },
+    {name: "Productos orgánicos",level: 95,category: "Calidad de productos"},
     { name: "Sostenibilidad", level: 92, category: "Compromiso ambiental" },
-    {
-      name: "Innovación tecnológica",
-      level: 88,
-      category: "Uso de tecnología",
-    },
+    {name: "Innovación tecnológica",level: 88,category: "Uso de tecnología"},
   ],
 
   // Array de enlaces o referencias (si aplica)
@@ -114,10 +106,8 @@ const GreenHarvest = {
   // ]
   links: [
     { name: "BankRouter", url: "https://www.greenharvest.com" },
-    {
-      name: "banktripol",
-      url: "https://www.linkedin.com/company/greenharvest",
-    },
+    {name: "banktripol",
+      url: "https://www.linkedin.com/company/greenharvest"},
     { name: "bank3h", url: "https://www.instagram.com/greenharvest" },
   ],
 
@@ -299,21 +289,28 @@ renderStats();
 // También crea 'loadTheme' para:
 // 1. Obtener el tema guardado de localStorage
 // 2. Aplicarlo si existe
-
+const_themeToggle = document.getElementById("themeToggle");
 const toggleTheme = () => {
   const currentTheme = document.documentElement.dataset.theme || "light";
   const newTheme = currentTheme === "dark" ? "light" : "dark";
   document.documentElement.dataset.theme = newTheme;
-  themeToggle.textContent = newTheme === "dark" ? "☀️" : "🌙";
-  // localStorage.setItem('theme', newTheme);
+  const themeIcon = themeToggle.querySelector(".theme-icon");
+  if (themeIcon) {
+    themeIcon.textContent = newTheme === "dark" ? "☀️" : "🌙";
+  }
+  localStorage.setItem("theme", newTheme);
 };
 
 const loadTheme = () => {
-  const savedTheme = localStorage.getItem("theme");
+  const savedTheme = localStorage.getItem("theme") || "light";
   document.documentElement.dataset.theme = savedTheme;
-  themeToggle.textContent = savedTheme === "dark" ? "☀️" : "🌙";
+  const themeIcon = themeToggle.querySelector(".theme-icon");
+  if (themeIcon) {
+    themeIcon.textContent = savedTheme === "dark" ? "☀️" : "🌙";
+  }
 };
-loadTheme();
+document.getElementById("themeToggle").addEventListener("click", toggleTheme);
+document.addEventListener("DOMContentLoaded", loadTheme);
 // ============================================
 // TODO 8: Funcionalidad de copiar información
 // ============================================
